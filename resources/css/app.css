@@ -1,0 +1,84 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Segoe UI', 'Helvetica Neue', ui-sans-serif, sans-serif;
+}
+
+@layer base {
+    body {
+        background:
+            radial-gradient(circle at top, rgba(251, 191, 36, 0.15), transparent 30%),
+            linear-gradient(180deg, #120f0a 0%, #0c0a09 45%, #020617 100%);
+    }
+}
+
+@layer components {
+    .site-shell {
+        @apply relative min-h-screen overflow-visible;
+    }
+
+    .nav-link {
+        @apply transition hover:text-amber-300;
+    }
+
+    .card-surface {
+        @apply rounded-[2rem] border border-white/10 bg-white/5 shadow-2xl shadow-black/20 backdrop-blur-sm;
+    }
+
+    .primary-button {
+        @apply inline-flex items-center rounded-full bg-amber-300 px-6 py-3 text-sm font-bold text-stone-950 transition hover:bg-amber-200;
+    }
+
+    .secondary-button {
+        @apply inline-flex items-center rounded-full border border-white/10 px-6 py-3 text-sm font-bold text-stone-100 transition hover:border-amber-300 hover:text-amber-300;
+    }
+
+    .badge-chip {
+        @apply inline-flex rounded-full border border-amber-300/40 bg-amber-300/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.3em] text-amber-200;
+    }
+
+    .hero-section {
+        @apply relative overflow-visible;
+    }
+
+    .feature-panel {
+        @apply rounded-[2rem] border border-white/10 bg-white/5 p-8 backdrop-blur-sm;
+    }
+
+    .feature-item {
+        @apply rounded-[1.5rem] border border-white/10 bg-stone-950/40 p-5;
+    }
+
+    .section-heading {
+        @apply flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between;
+    }
+
+    .section-kicker {
+        @apply text-xs font-bold uppercase tracking-[0.3em] text-amber-300;
+    }
+
+    .section-title {
+        @apply mt-2 text-3xl font-black text-white sm:text-4xl;
+    }
+
+    .form-label {
+        @apply mb-2 block text-sm font-semibold text-stone-200;
+    }
+
+    .form-input {
+        @apply w-full rounded-[1.25rem] border border-white/10 bg-stone-950/60 px-4 py-3 text-white outline-none transition placeholder:text-stone-500 focus:border-amber-300;
+    }
+
+    .form-error {
+        @apply mt-2 text-sm text-rose-300;
+    }
+
+    .product-card {
+        @apply transition duration-300 hover:-translate-y-1 hover:border-amber-300/40;
+    }
+}
